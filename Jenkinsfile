@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'build Passed !!'
-                sh 'uname -a'
+                sh 'uname -a' 
                 sh 'yum install httpd -y'
             }
         }
