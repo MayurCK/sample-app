@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'build Passed !!'
                 sh 'uname -a'
-                sh 'nginx -v'
+                sh 'yum install httpd -y'
             }
         }
         stage('Test') {
