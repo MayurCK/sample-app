@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'build Passed !! '
                 sh 'IMAGE_NAME="k8s-worker:5000/testapp:${BUILD_NUMBER}"'
-                sh 'docker push $IMAGE_NAME'
+                sh 'docker push ${IMAGE_NAME}'
                 sh 'kubectl get deployments/testapp'
             }
         }
