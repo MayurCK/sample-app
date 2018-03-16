@@ -4,9 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 echo 'build Passed !! '
-                sh 'uname -a'
-                sh 'docker -v'
-                sh 'kubectl version'
+                sh 'IMAGE_NAME="k8s-worker:5000/testapp:${BUILD_NUMBER}"'
+                sh 'docker push $IMAGE_NAME'
+                sh 'kubectl get deployments/testapp'
             }
         }
         stage('Test') {
