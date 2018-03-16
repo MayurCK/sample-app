@@ -4,9 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 echo 'build Passed !! '
-                sh 'uname -a' 
-                sh 'yum install docker -y'
+                sh 'uname -a'
                 sh 'docker -v'
+                sh 'kubectl version'
             }
         }
         stage('Test') {
