@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'build Passed !! '
                 sh 'uname -a' 
-                sh 'yum install httpd -y'
+                sh 'docker -v'
             }
         }
         stage('Test') {
