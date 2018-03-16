@@ -4,5 +4,5 @@ RUN yum install -y epel-release && yum install -y nginx && yum install docker -y
 RUN mkdir -p $HOME/.kube
 ADD config $HOME/.kube/config
 RUN cd $HOME/.kube && ls
-RUN sudo chown $(id -u):$(id -g) $HOME/.kube/config && kubectl get nodes
+RUN chown $(id -u):$(id -g) $HOME/.kube/config && kubectl get nodes
 COPY html /usr/share/nginx/html
