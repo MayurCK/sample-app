@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo 'build Passed !! '
                 sh 'uname -a' 
+                sh 'yum install docker -y'
                 sh 'docker -v'
             }
         }
